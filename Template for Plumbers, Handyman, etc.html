@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProFix Home Services | Licensed & Insured | Serving Metro Area</title>
+  <meta name="description" content="ProFix Home Services – licensed, insured, and trusted by 2,000+ homeowners. Fast response, upfront pricing, 100% satisfaction guarantee. Call now for a free quote!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & TOKENS ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0d1b2a;
+      --navy-mid: #1a2e44;
+      --blue: #1565c0;
+      --blue-light: #1e88e5;
+      --gold: #f59e0b;
+      --gold-light: #fcd34d;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --text: #1a1a2e;
+      --text-muted: #5a6474;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.10);
+      --shadow-lg: 0 12px 48px rgba(0,0,0,0.16);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section--alt { background: var(--off-white); }
+    .section--dark { background: var(--navy); color: var(--white); }
+    .tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.3); padding: 4px 14px; border-radius: 99px; margin-bottom: 18px; }
+    h1,h2,h3,h4 { font-family: 'Fraunces', serif; line-height: 1.15; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    h3 { font-size: 1.35rem; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header p { margin-top: 14px; font-size: 1.1rem; color: var(--text-muted); max-width: 560px; margin-left: auto; margin-right: auto; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1rem; cursor: pointer; border: 2px solid transparent; transition: all .22s ease; }
+    .btn-primary { background: var(--gold); color: var(--navy); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.35); }
+    .btn-outline { border-color: var(--white); color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--navy); }
+    .btn-blue { background: var(--blue); color: var(--white); }
+    .btn-blue:hover { background: var(--blue-light); transform: translateY(-2px); }
+
+    /* ===== TOP BAR ===== */
+    .topbar { background: var(--navy); color: var(--white); padding: 10px 0; font-size: .875rem; }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .topbar a { color: var(--gold-light); font-weight: 500; }
+    .topbar-info { display: flex; gap: 24px; flex-wrap: wrap; }
+    .topbar-info span { display: flex; align-items: center; gap: 6px; }
+
+    /* ===== NAVBAR ===== */
+    .navbar { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); box-shadow: 0 2px 16px rgba(0,0,0,.06); }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 900; color: var(--navy); display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 38px; height: 38px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 22px; height: 22px; fill: var(--gold); }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-weight: 500; color: var(--text); font-size: .95rem; position: relative; }
+    .nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:var(--gold); transition:width .2s; }
+    .nav-links a:hover::after { width:100%; }
+    .nav-cta { display: flex; align-items: center; gap: 14px; }
+    .phone-btn { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.05rem; color: var(--blue); }
+    .phone-btn svg { width: 18px; height: 18px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 26px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .2s; }
+    .mobile-menu { display: none; flex-direction: column; background: var(--white); border-top: 1px solid var(--border); padding: 20px 24px; gap: 16px; }
+    .mobile-menu a { font-weight: 500; font-size: 1.05rem; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .mobile-menu.open { display: flex; }
+
+    /* ===== HERO ===== */
+    .hero { min-height: 92vh; background: var(--navy); position: relative; overflow: hidden; display: flex; align-items: center; }
+    .hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80') center/cover no-repeat; opacity: .18; }
+    .hero-pattern { position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,.015) 40px, rgba(255,255,255,.015) 80px); }
+    .hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding-top: 60px; padding-bottom: 60px; }
+    .hero-content { color: var(--white); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.4); padding: 7px 16px; border-radius: 99px; font-size: .85rem; font-weight: 600; color: var(--gold-light); margin-bottom: 28px; }
+    .hero-badge::before { content:''; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+    .hero h1 { font-size: clamp(2.5rem, 5.5vw, 4.2rem); font-weight: 900; line-height: 1.08; margin-bottom: 22px; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-subtitle { font-size: 1.15rem; color: rgba(255,255,255,.75); max-width: 480px; margin-bottom: 36px; line-height: 1.7; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
+    .hero-phone { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: 10px; padding: 16px 22px; max-width: fit-content; }
+    .hero-phone-icon { width: 44px; height: 44px; background: var(--gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .hero-phone-icon svg { width: 22px; height: 22px; fill: var(--navy); }
+    .hero-phone-text small { display: block; font-size: .78rem; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .1em; }
+    .hero-phone-text a { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); letter-spacing: -.01em; }
+    .hero-trust { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
+    .hero-trust-item { display: flex; align-items: center; gap: 7px; font-size: .9rem; color: rgba(255,255,255,.65); }
+    .hero-trust-item svg { width: 16px; height: 16px; fill: var(--gold); flex-shrink: 0; }
+    .hero-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg); }
+    .hero-card-img { height: 260px; background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80') center/cover no-repeat; }
+    .hero-card-body { padding: 28px; }
+    .hero-card-body h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 16px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .hero-stat { text-align: center; }
+    .hero-stat strong { display: block; font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; color: var(--blue); }
+    .hero-stat span { font-size: .78rem; color: var(--text-muted); font-weight: 500; }
+    .hero-wave { position: absolute; bottom: -2px; left: 0; right: 0; }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar { background: var(--gold); padding: 18px 0; }
+    .trust-bar .container { display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 10px; color: var(--navy); font-weight: 600; font-size: .95rem; }
+    .trust-item svg { width: 22px; height: 22px; fill: var(--navy); }
+
+    /* ===== WHY US ===== */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
+    .why-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 28px; position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+    .why-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .why-card:hover::before { transform: scaleX(1); }
+    .why-icon { width: 56px; height: 56px; background: var(--navy); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .why-icon svg { width: 28px; height: 28px; fill: var(--gold); }
+    .why-card h3 { margin-bottom: 10px; color: var(--navy); }
+    .why-card p { color: var(--text-muted); font-size: .95rem; }
+
+    /* ===== SERVICES ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .service-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-card-img { height: 200px; position: relative; overflow: hidden; }
+    .service-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .service-card:hover .service-card-img img { transform: scale(1.06); }
+    .service-card-badge { position: absolute; top: 14px; left: 14px; background: var(--navy); color: var(--gold); font-size: .75rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; }
+    .service-card-body { padding: 24px; }
+    .service-card-icon { width: 44px; height: 44px; background: rgba(21,101,192,.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .service-card-icon svg { width: 24px; height: 24px; fill: var(--blue); }
+    .service-card-body h3 { margin-bottom: 8px; color: var(--navy); }
+    .service-card-body p { font-size: .9rem; color: var(--text-muted); margin-bottom: 18px; }
+    .service-features { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+    .service-features li { display: flex; align-items: center; gap: 8px; font-size: .88rem; color: var(--text-muted); }
+    .service-features li::before { content:'✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+    .service-link { font-weight: 600; color: var(--blue); font-size: .9rem; display: flex; align-items: center; gap: 6px; }
+    .service-link:hover { color: var(--navy); }
+
+    /* ===== PROCESS ===== */
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; position: relative; }
+    .process-steps::before { content:''; position:absolute; top: 36px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--gold), var(--blue)); opacity: .3; }
+    .process-step { text-align: center; position: relative; }
+    .process-num { width: 72px; height: 72px; border-radius: 50%; background: var(--navy); color: var(--gold); font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; border: 4px solid var(--gold); }
+    .process-step h3 { margin-bottom: 8px; color: var(--navy); font-size: 1.1rem; }
+    .process-step p { font-size: .9rem; color: var(--text-muted); }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+    .testimonial-card { background: var(--white); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); border: 1px solid var(--border); position: relative; }
+    .quote-mark { position: absolute; top: 20px; right: 24px; font-family: 'Fraunces', serif; font-size: 5rem; color: var(--gold); opacity: .15; line-height: 1; }
+    .stars { display: flex; gap: 3px; margin-bottom: 16px; }
+    .stars svg { width: 18px; height: 18px; fill: var(--gold); }
+    .testimonial-card p { color: var(--text); font-size: .97rem; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; }
+    .testimonial-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.2rem; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .testimonial-author-info strong { display: block; font-weight: 600; color: var(--navy); }
+    .testimonial-author-info span { font-size: .85rem; color: var(--text-muted); }
+    .testimonial-platform { display: flex; align-items: center; gap: 5px; font-size: .8rem; color: var(--text-muted); margin-top: 4px; }
+    .testimonial-platform svg { width: 14px; height: 14px; fill: #4285F4; }
+    .review-summary { display: flex; align-items: center; justify-content: center; gap: 40px; background: var(--navy); border-radius: var(--radius); padding: 36px; margin-top: 48px; flex-wrap: wrap; gap: 28px; }
+    .review-big { text-align: center; }
+    .review-big strong { display: block; font-family: 'Fraunces', serif; font-size: 3.5rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .review-big span { font-size: .9rem; color: rgba(255,255,255,.6); }
+    .review-divider { width: 1px; height: 60px; background: rgba(255,255,255,.15); }
+
+    /* ===== ABOUT ===== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img-main { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg); }
+    .about-img-main img { width: 100%; height: 440px; object-fit: cover; }
+    .about-img-badge { position: absolute; bottom: -24px; right: -24px; background: var(--gold); border-radius: 12px; padding: 20px 24px; box-shadow: var(--shadow); }
+    .about-img-badge strong { display: block; font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 900; color: var(--navy); line-height: 1; }
+    .about-img-badge span { font-size: .85rem; font-weight: 600; color: var(--navy); }
+    .about-content { padding-bottom: 24px; }
+    .about-content h2 { margin-bottom: 20px; }
+    .about-content p { color: var(--text-muted); margin-bottom: 16px; line-height: 1.8; }
+    .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
+    .cert-item { display: flex; align-items: center; gap: 10px; background: var(--off-white); border-radius: 8px; padding: 12px 16px; }
+    .cert-item svg { width: 20px; height: 20px; fill: var(--blue); flex-shrink: 0; }
+    .cert-item span { font-size: .88rem; font-weight: 500; color: var(--navy); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 60px; }
+    .team-card { text-align: center; }
+    .team-avatar { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 14px; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family:'Fraunces',serif; font-size:2rem; font-weight:700; color:var(--gold); }
+    .team-card h4 { font-size: 1.05rem; color: var(--navy); margin-bottom: 4px; }
+    .team-card span { font-size: .87rem; color: var(--text-muted); }
+
+    /* ===== FAQ ===== */
+    .faq-grid { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .faq-question { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-weight: 600; color: var(--navy); gap: 16px; user-select: none; }
+    .faq-question:hover { background: var(--off-white); }
+    .faq-toggle { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .25s, background .2s; }
+    .faq-toggle svg { width: 14px; height: 14px; fill: var(--gold); transition: transform .25s; }
+    .faq-item.open .faq-toggle { background: var(--gold); }
+    .faq-item.open .faq-toggle svg { fill: var(--navy); transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .25s; }
+    .faq-answer-inner { padding: 0 24px 20px; color: var(--text-muted); line-height: 1.75; font-size: .97rem; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+
+    /* ===== CONTACT ===== */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+    .contact-info h2 { margin-bottom: 16px; }
+    .contact-info p { color: var(--text-muted); margin-bottom: 32px; line-height: 1.8; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+    .contact-detail-icon { width: 48px; height: 48px; border-radius: 10px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-detail-icon svg { width: 22px; height: 22px; fill: var(--gold); }
+    .contact-detail-text strong { display: block; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+    .contact-detail-text span, .contact-detail-text a { color: var(--text-muted); font-size: .95rem; }
+    .map-placeholder { background: var(--navy-mid); border-radius: var(--radius); height: 200px; margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 12px; color: rgba(255,255,255,.5); font-size: .95rem; border: 2px dashed rgba(255,255,255,.15); }
+    .map-placeholder svg { width: 28px; height: 28px; fill: var(--gold); opacity: .5; }
+    .service-areas { margin-top: 22px; }
+    .service-areas h4 { font-size: 1rem; color: var(--navy); margin-bottom: 12px; }
+    .area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .area-tag { background: var(--off-white); border: 1px solid var(--border); border-radius: 99px; padding: 4px 14px; font-size: .83rem; font-weight: 500; color: var(--navy); }
+    .contact-form { background: var(--white); border-radius: 16px; padding: 40px; box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
+    .contact-form h3 { margin-bottom: 24px; color: var(--navy); font-size: 1.4rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-weight: 500; margin-bottom: 6px; font-size: .9rem; color: var(--navy); }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 12px 16px; font-family: 'DM Sans', sans-serif; font-size: .97rem; color: var(--text); background: var(--off-white); transition: border-color .2s; outline: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); background: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { width: 100%; padding: 16px; font-size: 1.05rem; }
+    .form-note { text-align: center; font-size: .83rem; color: var(--text-muted); margin-top: 12px; }
+    .urgency-banner { background: linear-gradient(135deg, #1b4f3a 0%, #065f46 100%); border-radius: 10px; padding: 14px 18px; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
+    .urgency-banner svg { width: 20px; height: 20px; fill: #6ee7b7; flex-shrink: 0; }
+    .urgency-banner span { font-size: .88rem; color: #a7f3d0; font-weight: 500; }
+    .urgency-banner strong { color: #ecfdf5; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+    .cta-banner::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 30% 50%, rgba(21,101,192,.3), transparent 60%); }
+    .cta-banner .container { position:relative; z-index:1; }
+    .cta-banner h2 { color: var(--white); margin-bottom: 14px; }
+    .cta-banner p { color: rgba(255,255,255,.65); font-size: 1.1rem; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-phone { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 1.15rem; font-family: 'Fraunces', serif; transition: all .2s; }
+    .cta-phone:hover { background: var(--gold-light); transform: scale(1.03); }
+
+    /* ===== FOOTER ===== */
+    footer { background: #080f18; color: rgba(255,255,255,.65); padding: 64px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 900; color: var(--white); margin-bottom: 14px; }
+    .footer-logo span { color: var(--gold); }
+    .footer-about p { font-size: .9rem; line-height: 1.8; margin-bottom: 20px; }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; transition: background .2s; }
+    .social-btn:hover { background: var(--gold); }
+    .social-btn svg { width: 16px; height: 16px; fill: currentColor; }
+    .footer-col h4 { color: var(--white); font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 18px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: .9rem; transition: color .2s; }
+    .footer-col ul a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.07); padding: 22px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: .83rem; }
+    .footer-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+    .footer-badge { background: rgba(255,255,255,.07); border-radius: 6px; padding: 6px 12px; font-size: .78rem; color: rgba(255,255,255,.5); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero .container { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { max-width: 480px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img-badge { right: 0; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .process-steps::before { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .review-divider { display: none; }
+      .trust-bar .container { gap: 20px; }
+      .trust-item span { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.1rem; }
+      .topbar .container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-info">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        Serving Metro City & Surrounding Areas
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        Mon–Sat: 7am–8pm | Emergency: 24/7
+      </span>
+    </div>
+    <a href="tel:+15551234567">📞 (555) 123-4567</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.78 15.3L19.78 21.3L21.89 19.14L15.89 13.14L13.78 15.3M17.5 11.5C17.91 11.5 18.34 11.45 18.76 11.35L14.5 7.09L13.09 8.5L10.27 5.68L11.68 4.27L10.27 2.86C8.31 .9 5.19 .9 3.22 2.86C1.26 4.83 1.26 7.95 3.22 9.91L4.64 11.33L6.05 9.91L3.93 7.79C2.76 6.62 2.76 4.73 3.93 3.56C5.1 2.39 7 2.39 8.16 3.56L9.58 4.97L8.16 6.39L13.67 11.9C14.33 11.63 15 11.5 15.67 11.5H17.5Z"/></svg>
+      </div>
+      Pro<span>Fix</span>
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+15551234567" class="phone-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        (555) 123-4567
+      </a>
+      <a href="#contact" class="btn btn-primary">Free Quote</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+15551234567" style="color:var(--blue);font-weight:700;">📞 (555) 123-4567</a>
+    <a href="#contact" class="btn btn-primary" style="text-align:center;justify-content:center;">Get Free Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">⚡ Same-Day Service Available</div>
+      <h1>Your Home's<br /><em>Most Trusted</em><br />Service Team</h1>
+      <p class="hero-subtitle">Licensed, insured, and backed by a 100% satisfaction guarantee. From emergency repairs to planned upgrades — we do it right the first time.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary" style="font-size:1.05rem;padding:16px 32px;">Get a Free Quote →</a>
+        <a href="#services" class="btn btn-outline">View Our Services</a>
+      </div>
+      <div class="hero-phone">
+        <div class="hero-phone-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div class="hero-phone-text">
+          <small>Call us now — free advice</small>
+          <a href="tel:+15551234567">(555) 123-4567</a>
+        </div>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg> Licensed & Insured</div>
+        <div class="hero-trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 100% Satisfaction Guarantee</div>
+        <div class="hero-trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> Same-Day Service</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-img"></div>
+      <div class="hero-card-body">
+        <h3>Trusted by Homeowners Across Metro City</h3>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>2,400+</strong><span>Jobs Completed</span></div>
+          <div class="hero-stat"><strong>15+</strong><span>Years Experience</span></div>
+          <div class="hero-stat"><strong>4.9★</strong><span>Avg. Rating</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="white" d="M0,32L80,37.3C160,43,320,53,480,53.3C640,53,800,43,960,37.3C1120,32,1280,32,1360,32L1440,32L1440,60L1360,60C1280,60,1120,60,960,60C800,60,640,60,480,60C320,60,160,60,80,60L0,60Z"/></svg>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>Fully Licensed & Insured</span></div>
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg><span>Same-Day Service</span></div>
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg><span>Upfront Pricing</span></div>
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>100% Satisfaction Guarantee</span></div>
+    <div class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg><span>24/7 Emergency Support</span></div>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Why ProFix?</div>
+      <h2>Service You Can Actually Count On</h2>
+      <p>We've built our reputation on showing up on time, doing the job right, and treating your home like our own.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+        <h3>Rapid Response Time</h3>
+        <p>We arrive within 2 hours for urgent calls, or at your scheduled time — guaranteed. No waiting around all day in a vague window.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+        <h3>Clear, Upfront Pricing</h3>
+        <p>You'll always know the cost before we start. No surprise charges, no hidden fees — just honest quotes you can approve in advance.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+        <h3>Licensed & Fully Insured</h3>
+        <p>Every technician is background-checked, professionally licensed, and covered by liability insurance — so you're fully protected.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <h3>Satisfaction Guaranteed</h3>
+        <p>Not happy? We'll come back and make it right at no charge. Our 100% satisfaction guarantee isn't fine print — it's our promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section--alt" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">What We Do</div>
+      <h2>Services Built Around Your Home</h2>
+      <p>From routine maintenance to complex repairs — our certified team handles it all with care and expertise.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80" alt="Plumbing Services" loading="lazy" />
+          <div class="service-card-badge">Most Popular</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.66 11.2C17.43 10.9 17.15 10.64 16.89 10.38C16.22 9.78 15.46 9.35 14.82 8.72C13.33 7.26 13 4.85 13.95 3C13 3.23 12.17 3.75 11.46 4.32C8.87 6.4 7.85 10.07 9.07 13.22C9.11 13.32 9.15 13.42 9.15 13.55C9.15 13.77 9 13.97 8.8 14.05C8.57 14.15 8.33 14.09 8.14 13.93C8.08 13.88 8.04 13.83 8 13.76C6.87 12.33 6.69 10.28 7.45 8.64C5.78 10 4.87 12.3 5 14.47C5.06 14.97 5.12 15.47 5.29 15.97C5.43 16.57 5.7 17.17 6 17.7C7.08 19.43 8.95 20.67 10.96 20.92C13.1 21.19 15.39 20.8 17.03 19.32C18.86 17.66 19.5 15 18.56 12.72L18.43 12.46C18.22 12 17.66 11.2 17.66 11.2Z"/></svg></div>
+          <h3>Plumbing Services</h3>
+          <p>From dripping faucets to full pipe replacement — fast, reliable plumbing that stops leaks and water damage in their tracks.</p>
+          <ul class="service-features">
+            <li>Emergency leak repairs</li>
+            <li>Drain cleaning & unclogging</li>
+            <li>Water heater installation</li>
+            <li>Fixture replacement & upgrades</li>
+          </ul>
+          <a href="#contact" class="service-link">Request Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Electrical Services" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></div>
+          <h3>Electrical Work</h3>
+          <p>Safe, code-compliant electrical services from our certified electricians — for every project big and small.</p>
+          <ul class="service-features">
+            <li>Panel upgrades & breaker repair</li>
+            <li>Outlet & switch installation</li>
+            <li>Lighting & ceiling fan work</li>
+            <li>Safety inspections</li>
+          </ul>
+          <a href="#contact" class="service-link">Request Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="HVAC Services" loading="lazy" />
+          <div class="service-card-badge">24/7 Emergency</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22v-2z"/></svg></div>
+          <h3>HVAC & Climate Control</h3>
+          <p>Keep your home comfortable year-round with our heating, ventilation, and air conditioning services.</p>
+          <ul class="service-features">
+            <li>AC installation & repair</li>
+            <li>Furnace service & replacement</li>
+            <li>Duct cleaning & sealing</li>
+            <li>Seasonal tune-ups</li>
+          </ul>
+          <a href="#contact" class="service-link">Request Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Landscaping Services" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2s-.77-1.85-2-2C6 2.5 4 9 4 9s3-1 6.5-1S18 11 18 11"/></svg></div>
+          <h3>Landscaping & Lawn Care</h3>
+          <p>Professional lawn care and landscape design that boosts curb appeal and keeps your outdoor spaces pristine.</p>
+          <ul class="service-features">
+            <li>Weekly lawn maintenance</li>
+            <li>Garden design & planting</li>
+            <li>Irrigation system setup</li>
+            <li>Seasonal cleanups</li>
+          </ul>
+          <a href="#contact" class="service-link">Request Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?w=600&q=80" alt="Handyman Services" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.78 15.3L19.78 21.3L21.89 19.14L15.89 13.14L13.78 15.3M17.5 11.5C17.91 11.5 18.34 11.45 18.76 11.35L14.5 7.09L13.09 8.5L10.27 5.68L11.68 4.27L10.27 2.86C8.31 .9 5.19 .9 3.22 2.86C1.26 4.83 1.26 7.95 3.22 9.91L4.64 11.33L6.05 9.91L3.93 7.79C2.76 6.62 2.76 4.73 3.93 3.56C5.1 2.39 7 2.39 8.16 3.56L9.58 4.97L8.16 6.39L13.67 11.9C14.33 11.63 15 11.5 15.67 11.5H17.5Z"/></svg></div>
+          <h3>General Handyman</h3>
+          <p>No job too small — we tackle the honey-do list so you don't have to. Fast, affordable, and done right.</p>
+          <ul class="service-features">
+            <li>Drywall repair & patching</li>
+            <li>Door & window adjustments</li>
+            <li>Furniture assembly</li>
+            <li>Painting & caulking</li>
+          </ul>
+          <a href="#contact" class="service-link">Request Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=600&q=80" alt="Home Inspection" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+          <h3>Home Inspections</h3>
+          <p>Buying, selling, or just want peace of mind? Our certified inspectors deliver detailed reports you can rely on.</p>
+          <ul class="service-features">
+            <li>Pre-purchase inspections</li>
+            <li>Roof & structural checks</li>
+            <li>Plumbing & electrical review</li>
+            <li>Written detailed reports</li>
+          </ul>
+          <a href="#contact" class="service-link">Request Service →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">How It Works</div>
+      <h2>From Call to Completion in 4 Steps</h2>
+      <p>Our streamlined process means less hassle for you and faster results from us.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <h3>Call or Request Online</h3>
+        <p>Reach us by phone or submit a quick form. We'll respond within 30 minutes during business hours.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <h3>Get Your Free Quote</h3>
+        <p>We assess your needs and provide a clear, no-obligation estimate before any work begins. No surprises.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <h3>We Do the Work</h3>
+        <p>Our certified technicians arrive on time, work efficiently, and respect your home throughout.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <h3>You're Satisfied</h3>
+        <p>We clean up, walk you through the work, and only leave when you're completely happy with the result.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section--alt" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Customer Reviews</div>
+      <h2>What Our Customers Say</h2>
+      <p>Don't take our word for it — here's what real homeowners across Metro City have experienced.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <p>My water heater burst on a Sunday morning. I called ProFix and they had a technician at my door within 90 minutes. Professional, friendly, and the price was exactly what they quoted. I won't call anyone else.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SM</div>
+          <div class="testimonial-author-info">
+            <strong>Sarah M.</strong>
+            <span>Homeowner in Riverside</span>
+            <div class="testimonial-platform">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Verified Google Review
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <p>Used ProFix for an electrical panel upgrade before selling our home. The team was incredibly knowledgeable, passed inspection on the first try, and the price came in under their estimate. Highly recommend!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JL</div>
+          <div class="testimonial-author-info">
+            <strong>James & Lisa T.</strong>
+            <span>Homeowners in Oak Park</span>
+            <div class="testimonial-platform">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Verified Google Review
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <p>I've had ProFix out four times now — plumbing, landscaping, AC service, and a handyman visit. Every single time: on time, professional, and clean. These guys are my go-to for everything at home.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div class="testimonial-author-info">
+            <strong>Maria R.</strong>
+            <span>Homeowner in Lakeside</span>
+            <div class="testimonial-platform">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Verified Google Review
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="review-summary">
+      <div class="review-big"><strong>4.9</strong><span>Average Rating</span></div>
+      <div class="review-divider"></div>
+      <div class="review-big"><strong>2,400+</strong><span>Reviews</span></div>
+      <div class="review-divider"></div>
+      <div class="review-big"><strong>98%</strong><span>Recommend Us</span></div>
+      <div class="review-divider"></div>
+      <div class="review-big"><strong>15+</strong><span>Years in Business</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="ProFix Team at Work" loading="lazy" />
+        </div>
+        <div class="about-img-badge">
+          <strong>15+</strong>
+          <span>Years Serving<br/>Metro City</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="tag">Our Story</div>
+        <h2>Local Experts Who Treat Every Home Like Their Own</h2>
+        <p>ProFix was founded in 2009 by Marcus and Elena Rivera, a husband-and-wife team who believed Metro City deserved better home service — faster response times, clearer communication, and technicians who genuinely care about the quality of their work.</p>
+        <p>What started as a two-person plumbing operation has grown into a team of 18 certified professionals covering everything from electrical and HVAC to landscaping and general handyman work. Every technician we hire shares our core values: respect, reliability, and craftsmanship.</p>
+        <p>We live and work in the same neighborhoods we serve. When we do great work for you, you tell your neighbors — and that's been our best marketing since day one.</p>
+        <div class="cert-grid">
+          <div class="cert-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>State Licensed Contractor</span></div>
+          <div class="cert-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>$2M Liability Insurance</span></div>
+          <div class="cert-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>EPA & NATE Certified</span></div>
+          <div class="cert-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>BBB A+ Accredited</span></div>
+          <div class="cert-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>Background-Checked Staff</span></div>
+          <div class="cert-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>Workers' Comp Coverage</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="team-grid" style="margin-top:80px;">
+      <div style="grid-column:1/-1; text-align:center; margin-bottom:8px;">
+        <div class="tag">The Team</div>
+        <h2>Meet the Faces Behind ProFix</h2>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">MR</div>
+        <h4>Marcus Rivera</h4>
+        <span>Founder & Lead Plumber</span>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">ER</div>
+        <h4>Elena Rivera</h4>
+        <span>Co-Founder & Operations</span>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">DK</div>
+        <h4>David Kim</h4>
+        <span>Master Electrician</span>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">TP</div>
+        <h4>Tony Persico</h4>
+        <span>HVAC Specialist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before booking with us.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          How quickly can you come out?
+          <div class="faq-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">For emergencies, we aim to arrive within 2 hours of your call, 7 days a week. For scheduled, non-urgent work, we typically have availability within 1–3 business days. You can also book online and choose from available time slots that work for your schedule.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Do you offer free estimates?
+          <div class="faq-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes — all quotes are free and come with no obligation. For most jobs, we can give you a price estimate over the phone or via our contact form. For larger or more complex projects, we'll schedule a brief on-site visit to assess the work before providing a written quote.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Are your technicians licensed and insured?
+          <div class="faq-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. Every member of our team is fully licensed in their trade, background-checked before hiring, and covered by our $2 million general liability insurance policy as well as workers' compensation. You can request proof of insurance any time — we're happy to provide it.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What if I'm not satisfied with the work?
+          <div class="faq-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Our 100% satisfaction guarantee means we'll come back and make it right at no additional charge. We take pride in our work, and we stand behind every job we complete. If something isn't right, call us within 30 days and we'll fix it — simple as that.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What areas do you serve?
+          <div class="faq-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">We serve Metro City and the surrounding areas including Riverside, Oak Park, Lakeside, Northview, Elm Grove, and Cedar Falls. Not sure if we cover your area? Give us a call or check the map on our Contact page — we're happy to let you know and may be able to accommodate areas not listed.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What payment methods do you accept?
+          <div class="faq-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">We accept all major credit cards (Visa, Mastercard, Amex), debit cards, checks, and cash. Payment is collected after the job is complete and you've approved the work. For larger projects, we offer flexible financing options — ask us for details when you request your quote.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Get In Touch</div>
+      <h2>Ready to Get Started?</h2>
+      <p>Reach out today for a free, no-obligation quote. We respond to all inquiries within 30 minutes during business hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div class="contact-detail-text">
+            <strong>Call or Text Us</strong>
+            <a href="tel:+15551234567">(555) 123-4567</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div class="contact-detail-text">
+            <strong>Email Us</strong>
+            <a href="mailto:hello@profix.com">hello@profix.com</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+          <div class="contact-detail-text">
+            <strong>Office Address</strong>
+            <span>742 Craftsman Way, Metro City, ST 55401</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+          <div class="contact-detail-text">
+            <strong>Business Hours</strong>
+            <span>Mon–Fri: 7am–8pm | Sat: 8am–5pm | Emergency: 24/7</span>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+          Service Area Map — Replace with Google Maps embed
+        </div>
+        <div class="service-areas">
+          <h4>Areas We Serve:</h4>
+          <div class="area-tags">
+            <span class="area-tag">Metro City</span>
+            <span class="area-tag">Riverside</span>
+            <span class="area-tag">Oak Park</span>
+            <span class="area-tag">Lakeside</span>
+            <span class="area-tag">Northview</span>
+            <span class="area-tag">Elm Grove</span>
+            <span class="area-tag">Cedar Falls</span>
+            <span class="area-tag">+ More</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="urgency-banner">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          <span><strong>Need immediate help?</strong> Call (555) 123-4567 for same-day service.</span>
+        </div>
+        <h3>Request Your Free Quote</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" placeholder="John" required />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" placeholder="(555) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@email.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Service Address *</label>
+          <input type="text" id="address" placeholder="123 Main St, Metro City" required />
+        </div>
+        <div class="form-group">
+          <label for="service">Service Needed *</label>
+          <select id="service" required>
+            <option value="" disabled selected>Select a service...</option>
+            <option>Plumbing</option>
+            <option>Electrical</option>
+            <option>HVAC / Heating & Cooling</option>
+            <option>Landscaping / Lawn Care</option>
+            <option>General Handyman</option>
+            <option>Home Inspection</option>
+            <option>Emergency Repair</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="urgency">How urgent is this?</label>
+          <select id="urgency">
+            <option value="" disabled selected>Select urgency...</option>
+            <option>Emergency — need help today</option>
+            <option>Urgent — within 1–2 days</option>
+            <option>Standard — within the week</option>
+            <option>Flexible — just getting a quote</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Describe the Issue</label>
+          <textarea id="message" placeholder="Tell us what's going on — any details help us prepare and quote accurately..."></textarea>
+        </div>
+        <button class="btn btn-primary form-submit" onclick="handleFormSubmit(event)">
+          Send My Free Quote Request →
+        </button>
+        <p class="form-note">🔒 Your info is private and never shared. We'll respond within 30 minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Don't Wait — Get Your Home Fixed Today</h2>
+    <p>Join 2,400+ satisfied homeowners across Metro City. Fast service, honest pricing, guaranteed results.</p>
+    <div class="cta-buttons">
+      <a href="tel:+15551234567" class="cta-phone">
+        📞 Call (555) 123-4567
+      </a>
+      <a href="#contact" class="btn btn-outline">Request Online Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-logo">Pro<span>Fix</span></div>
+        <p>Metro City's most trusted home service company since 2009. Licensed, insured, and backed by a 100% satisfaction guarantee.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Google">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Yelp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.16 12.73l-4.703 1.107c-.53.124-.96-.432-.703-.913L17.09 8.36c.277-.514.97-.494 1.222.034l1.773 3.584c.233.471-.082.993-.563.996l-.362.756zm-8.69 4.402l1.45 4.606c.194.615-.38 1.18-.978.964l-5.15-1.896c-.59-.217-.68-.997-.152-1.34l3.685-2.694c.492-.36 1.144-.073 1.145.36zm-1.74-5.785L5.49 8.923c-.48-.264-.456-.97.044-1.2l5.023-2.242c.597-.266 1.2.272 1.017.895l-1.338 4.423c-.178.59-.937.763-1.31.325zm1.74-4.055l.95-4.712c.127-.63.93-.821 1.318-.306L16.4 5.887c.353.468.052 1.124-.52 1.17l-4.843.39c-.604.049-1.007-.617-.77-1.176l.963-1.933z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Plumbing</a></li>
+          <li><a href="#services">Electrical</a></li>
+          <li><a href="#services">HVAC</a></li>
+          <li><a href="#services">Landscaping</a></li>
+          <li><a href="#services">Handyman</a></li>
+          <li><a href="#services">Inspections</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+          <li><a href="mailto:hello@profix.com">hello@profix.com</a></li>
+          <li><a href="#">742 Craftsman Way</a></li>
+          <li><a href="#">Metro City, ST 55401</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ProFix Home Services. All rights reserved.</span>
+      <div class="footer-badges">
+        <span class="footer-badge">Licensed & Insured</span>
+        <span class="footer-badge">BBB A+</span>
+        <span class="footer-badge">Google 4.9★</span>
+      </div>
+      <span><a href="#" style="color:rgba(255,255,255,.4)">Privacy Policy</a> · <a href="#" style="color:rgba(255,255,255,.4)">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const btn = e.target;
+    btn.textContent = '✓ Request Sent! We\'ll call you shortly.';
+    btn.style.background = '#059669';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  }
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.why-card, .service-card, .testimonial-card, .process-step, .faq-item').forEach(el => {
+    el.style.opacity='0'; el.style.transform='translateY(28px)'; el.style.transition='opacity .55s ease, transform .55s ease';
+    observer.observe(el);
+  });
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }));
+</script>
+</body>
+</html>
